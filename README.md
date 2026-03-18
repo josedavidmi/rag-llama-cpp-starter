@@ -2,6 +2,9 @@
 
 Este repositorio deja montado un ejemplo completo de chatbot con RAG pensado para despliegue sencillo en Windows y Linux.
 
+<img width="314" height="155" alt="image" src="https://github.com/user-attachments/assets/e5ff5fd2-5ba2-4c88-922b-15ebedfc7cb6" />
+
+
 ## Qué incluye
 
 - `llama.cpp` como servidor del modelo local en Docker.
