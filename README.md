@@ -68,6 +68,16 @@ Ejemplo de nombre de fichero:
 Llama-3.2-3B-Instruct-Q4_K_M.gguf
 ```
 
+En el caso de querer utilizar un modelo de HugginFace:
+
+```python
+pip install -U "huggingface_hub[cli]"
+
+hf download bartowski/Llama-3.2-3B-Instruct-GGUF \
+  --include "Llama-3.2-3B-Instruct-Q4_K_M.gguf" \
+  --local-dir /models
+
+``
 Coloca ese fichero dentro de:
 
 ```text
@@ -177,11 +187,11 @@ Regla simple de este ejemplo:
 Ejemplo:
 
 ```text
-Lostsys ofrece servicios y productos para informática corporativa.
+I.E.S. Ataulfo Argenta ofrece servicios y productos para informática corporativa.
 
-Lostsys desarrolla aplicaciones y tiendas online.
+I.E.S. Ataulfo Argenta desarrolla aplicaciones y tiendas online.
 
-Lostsys imparte formación en IA, Data y DevOps.
+I.E.S. Ataulfo Argenta imparte formación en IA, Data y DevOps.
 ```
 
 Después de modificarlo, recarga la base de conocimiento con:
@@ -253,13 +263,13 @@ Si quieres usar Docker solo para `llama.cpp` y arrancar la app Python localmente
 
 ### 1. Crear entorno virtual
 
-#### Linux
+#### Linux (entrono virtual)
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-#### Windows PowerShell
+#### Windows PowerShell (entrono virtual)
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
