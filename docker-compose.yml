@@ -1,0 +1,35 @@
+services:
+  llama-server:
+    image: ${LLAMA_IMAGE:-ghcr.io/ggml-org/llama.cpp:server}
+    container_name: llama-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/models
+    command: >
+      -m /models/${MODEL_FILE}
+      -c ${CTX_SIZE:-4096}
+      --host 0.0.0.0
+      --port 8080
+    restart: unless-stopped
+
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    container_name: rag-app
+    depends_on:
+      - llama-server
+    environment:
+      LLM_BASE_URL: http://llama-server:8080/v1
+      MODEL_NAME: ${MODEL_FILE}
+      CHROMA_DIR: /data/chroma
+      DOCS_FILE: /app/docs/Documento_base.txt
+      TOP_K: ${TOP_K:-2}
+      TEMPERATURE: ${TEMPERATURE:-0.3}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./docs:/app/docs
+      - ./data:/data
+    restart: unless-stopped

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAG + llama.cpp</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="panel">
+      <h1>Chatbot RAG con llama.cpp</h1>
+      <p class="subtitle">Ejemplo listo para desplegar con Docker y FastAPI.</p>
+
+      <div id="chat" class="chat"></div>
+
+      <form id="chat-form" class="composer">
+        <textarea id="message" placeholder="Escribe una pregunta..." rows="3"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <details class="context-box">
+        <summary>Ver contexto recuperado</summary>
+        <pre id="context"></pre>
+      </details>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
