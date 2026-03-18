@@ -1,4 +1,4 @@
-# Chatbot RAG con `llama.cpp` + FastAPI + Chroma
+# Chatbot RAG con `llama.cpp`[https://github.com/janhq/llama.cpp/tree/dev] + FastAPI + Chroma
 
 Este repositorio deja montado un ejemplo completo de chatbot con RAG pensado para despliegue sencillo en Windows y Linux.
 
